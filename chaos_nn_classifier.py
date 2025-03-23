@@ -41,6 +41,9 @@ kf = StratifiedKFold(n_splits=k, shuffle=True, random_state=42)
 accuracies, precisions, recalls, f1_scores, all_y_true, all_y_pred = [], [], [], [], [], []
 last_model, X_test_last, y_test_last = None, None, None
 
+# Callback for early stopping
+early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+
 for train_index, test_index in kf.split(X, y):
     X_train, X_test = X[train_index], X[test_index]
     y_train, y_test = y[train_index], y[test_index]
@@ -60,7 +63,7 @@ for train_index, test_index in kf.split(X, y):
         keras.layers.Dense(1, activation='sigmoid')
     ])
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-    model.fit(X_train, y_train, epochs=10, batch_size=16, class_weight=class_weight_dict, verbose=0)
+    model.fit(X_train, y_train, epochs=10, batch_size=16, class_weight=class_weight_dict, verbose=0, validation_data=(X_test, y_test), callbacks=[early_stopping])
     
     loss, accuracy = model.evaluate(X_test, y_test, verbose=0)
     y_pred_prob = model.predict(X_test)
