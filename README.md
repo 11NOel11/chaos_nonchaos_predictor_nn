@@ -78,9 +78,18 @@ python chaos_nn_classifier.py
 📌 **Training History Graph**  
 📌 **SHAP Summary & Dependence Plots**  
 
-| Double PENDULUM Ch |  SHAP Dependence Plot |  Accuracy Comparison |  ROC Curve |  SHM Non-Chaotic |
-|----------------|----------------|----------------|
-| ![PCA](graphs/double_pendulum_motion_chaotic.png) | ![SHAP](graphs/meanshapvalue.png) | ![Accuracy](graphs/confusionmatrix.png) | ![ROC](graphs/roc_curve.png) | ![SHM](graphs/shm_nonchaotic.png) |
+
+## Double Pendulum Motion
+![Double Pendulum ](graphs/double_pendulum_motion_chaotic.png) 
+## SHM motion
+![SHM](graphs/shm_nonchaotic.png) 
+## SHAP
+![SHAP](graphs/meanshapvalue.png) 
+## Confusion Matrix 
+![Confusion Matrix ](graphs/confusionmatrix.png) 
+## ROC
+![ROC](graphs/roc_curve.png) 
+
 
 ---
 
