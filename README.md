@@ -24,14 +24,12 @@ In contrast, machine learning—particularly **neural networks**—can learn fro
 ## Theoretical Background  
 ### Lyapunov Exponent & Chaos  
 The **Lyapunov exponent (\( \lambda \))** measures the sensitivity of a system to initial conditions. It is defined as:
-\[  
-\lambda = \lim_{{t \to \infty}} \frac{1}{t} \sum_{i=1}^{t} \ln \left| \frac{dx_i}{dx_0} \right|  
-\]
-If \( \lambda > 0 \), the system is chaotic, meaning small perturbations lead to exponential divergence. If \( \lambda \leq 0 \), the system is stable or periodic.
+\[![Lyapunov Equation](https://latex.codecogs.com/png.latex?\lambda=\lim_{{t\to\infty}}\frac{1}{t}\sum_{{i=1}}^{t}\ln\left|\frac{dx_i}{dx_0}\right|)\]
+If $$\lambda > 0$$, the system is chaotic, meaning small perturbations lead to exponential divergence. If $$\lambda \leq 0$$, the system is stable or periodic.
 
 ### Why Lyapunov Exponents Struggle in Some Cases  
 While the Lyapunov exponent is a well-established tool, it has **limitations**:
-- **High-Dimensional Systems** – Computing \( \lambda \) accurately becomes difficult in complex systems.
+- **High-Dimensional Systems** – Computing $$\lambda $$ accurately becomes difficult in complex systems.
 - **Noise Sensitivity** – Small measurement errors can lead to incorrect classification.
 - **Unseen Scenarios** – The method struggles when applied to real-world data with uncertainties.
 
@@ -54,7 +52,7 @@ We use simulated data from **SHM and Double Pendulum systems**, generating time-
 - **Training Details** – The model was trained with an 80-20 train-test split, using a batch size of 32 and trained for 50 epochs.
 
 ### Lyapunov Baseline Classifier  
-- Computes **Lyapunov exponent** and classifies based on \( \lambda > 0 \).  
+- Computes **Lyapunov exponent** and classifies based on $$\lambda > 0$$.  
 - Serves as a benchmark for machine learning performance.  
 
 ---
@@ -76,12 +74,21 @@ Our experiments show that deep learning significantly outperforms Lyapunov expon
 
 ---
 
-## Conclusion  
-This study demonstrates that **deep learning provides a superior alternative to Lyapunov exponent-based chaos classification**. The neural network approach not only achieves higher accuracy but also offers better generalizability, especially in complex, high-dimensional systems where traditional methods fail. Furthermore, **SHAP-based explanations enhance interpretability**, making AI-driven classification more transparent.
+## Visualizations & Explainability  
+### Double Pendulum Motion (Chaotic Example)  
+![Double Pendulum](graphs/double_pendulum_motion_chaotic.png)
 
-The findings suggest that **deep learning can serve as a powerful tool for chaos detection in real-world applications** such as weather forecasting, financial risk assessment, and astrophysics. By combining neural networks with explainability techniques, we bridge the gap between AI and classical chaos theory, paving the way for more reliable and interpretable models in nonlinear dynamics.
+### SHM Motion (Non-Chaotic Example)  
+![SHM](graphs/shm_nonchaotic.png)
 
-### *"Deep learning offers a paradigm shift in chaos classification, enabling insights beyond conventional mathematical methods."*  
+### SHAP Feature Importance  
+![SHAP](graphs/meanshapvalue.png)
+
+### Confusion Matrix  
+![Confusion Matrix](graphs/confusionmatrix.png)
+
+### ROC Curve  
+![ROC](graphs/roc_curve.png)
 
 ---
 
@@ -95,9 +102,40 @@ The findings suggest that **deep learning can serve as a powerful tool for chaos
 
 ---
 
+## Conclusion  
+This study demonstrates that **deep learning significantly outperforms Lyapunov exponents** in classifying chaotic systems. By leveraging neural networks, we achieve improved generalization and adaptability, overcoming the **rigid assumptions** of traditional mathematical methods. Furthermore, **SHAP-based explainability** bridges the gap between black-box AI models and human interpretability, providing insights into how chaos is classified. 
+
+These results suggest that **machine learning could be a powerful tool for chaos classification across various domains**, from astrophysics to financial modeling. Future research should focus on integrating hybrid approaches, combining **domain-specific mathematical features with deep learning architectures**, to further refine classification accuracy and interpretability.
+
+---
+
 ## References  
 - Sprott, J. C. (2003). *Chaos and Time-Series Analysis*  
 - Strogatz, S. H. (2018). *Nonlinear Dynamics and Chaos*  
 - Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*  
 
 ---
+
+## Installation & Usage  
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/11NOel1/chaos-classification.git  
+cd chaos-classification  
+```
+### 2. Install Dependencies  
+```bash
+pip install -r requirements.txt  
+```
+### 3. Run the Neural Network Model  
+```bash
+python chaos_nn_classifier.py  
+```
+
+## Contact & Contributions  
+- **Researchers interested in expanding this work** can explore hybrid models combining Lyapunov features with neural embeddings.  
+- **Want to contribute?** Open an **Issue** or submit a **Pull Request** on GitHub.  
+- **For inquiries, reach out via email or GitHub Discussions.**  
+
+---
+
+### *"Machine learning enables chaos classification beyond conventional mathematical limits."*
