@@ -23,7 +23,7 @@ In contrast, machine learning—particularly **neural networks**—can learn fro
 
 ## Theoretical Background  
 ### Lyapunov Exponent & Chaos  
-The **Lyapunov exponent (\( \lambda \))** measures the sensitivity of a system to initial conditions. It is defined as:
+The **Lyapunov exponent $$\lambda$$** measures the sensitivity of a system to initial conditions. It is defined as:
 \[![Lyapunov Equation](https://latex.codecogs.com/png.latex?\lambda=\lim_{{t\to\infty}}\frac{1}{t}\sum_{{i=1}}^{t}\ln\left|\frac{dx_i}{dx_0}\right|)\]
 If $$\lambda > 0$$, the system is chaotic, meaning small perturbations lead to exponential divergence. If $$\lambda \leq 0$$, the system is stable or periodic.
 
@@ -33,7 +33,7 @@ While the Lyapunov exponent is a well-established tool, it has **limitations**:
 - **Noise Sensitivity** – Small measurement errors can lead to incorrect classification.
 - **Unseen Scenarios** – The method struggles when applied to real-world data with uncertainties.
 
-This motivates the need for a **data-driven alternative** like neural networks.
+This motivates the need for a **data-driven** alternative like neural networks, which are well-suited for capturing and predicting chaotic systems. Their ability to recognize complex patterns and nonlinear dependencies makes them a powerful tool for modeling chaotic dynamics where traditional analytical methods fall short.
 
 ---
 
@@ -92,14 +92,35 @@ Our experiments show that deep learning significantly outperforms Lyapunov expon
 
 ---
 
-## Future Work & Research Directions  
-- **Apply chaos detection to weather prediction systems** (e.g., atmospheric turbulence modeling).  
-- **Use chaos classification for financial market instability detection, leveraging similar feature engineering approaches.**  
-- **Expand dataset to include Lorenz Attractor & Logistic Map.**  
-- **Explore Recurrent Neural Networks (RNNs) and Transformers for time-series classification.**  
-- **Enhance interpretability using LIME & Counterfactual Explanations.**  
-- **Augment the dataset with real-world sensor data rather than simulated trajectories, improving generalizability.**  
+ Apply chaos detection to weather prediction systems
+Extend the current methodology to analyze chaotic patterns in atmospheric turbulence.
+Investigate the effectiveness of neural networks in predicting extreme weather events by leveraging real-time meteorological datasets.
+Compare AI-based models with traditional numerical weather prediction techniques (e.g., Navier-Stokes simulations).
 
+🔹 Use chaos classification for financial market instability detection
+Apply similar feature engineering approaches to detect chaotic patterns in stock prices, currency exchange rates, and cryptocurrency fluctuations.
+Develop models that can distinguish between normal market variations and turbulence-driven financial crashes.
+Explore AI-powered indicators for risk assessment in financial systems.
+
+🔹 Expand dataset to include Lorenz Attractor & Logistic Map
+Integrate additional chaotic systems, such as the Lorenz Attractor and Logistic Map, to diversify training data.
+Analyze how different chaotic systems influence model performance and generalization.
+Conduct experiments to assess model accuracy across various dynamical systems.
+
+🔹 Explore Recurrent Neural Networks (RNNs) and Transformers for time-series classification
+Investigate the effectiveness of RNNs, Long Short-Term Memory (LSTM) networks, and Transformers in capturing temporal dependencies in chaotic sequences.
+Compare traditional feedforward neural networks with advanced architectures for long-range dependency modeling.
+Implement attention mechanisms to enhance interpretability in chaos prediction.
+
+🔹 Enhance interpretability using LIME & Counterfactual Explanations
+Integrate Local Interpretable Model-agnostic Explanations (LIME) to identify key features influencing chaotic predictions.
+Utilize counterfactual explanations to explore how slight variations in input conditions impact predictions.
+Improve trust and transparency in AI-driven chaos modeling by making decision processes more understandable.
+
+🔹 Augment the dataset with real-world sensor data
+Move beyond simulated chaotic trajectories by incorporating real-world sensor data from climate monitoring stations, financial market indicators, and experimental physics setups.
+Improve model generalizability by training on real-world chaotic phenomena rather than purely mathematical constructs.
+Partner with research institutions to obtain high-quality experimental datasets for AI-driven chaos analysis.
 ---
 
 ## Conclusion  
