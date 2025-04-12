@@ -117,10 +117,6 @@ Integrate Local Interpretable Model-agnostic Explanations (LIME) to identify key
 Utilize counterfactual explanations to explore how slight variations in input conditions impact predictions.
 Improve trust and transparency in AI-driven chaos modeling by making decision processes more understandable.
 
-🔹 Augment the dataset with real-world sensor data
-Move beyond simulated chaotic trajectories by incorporating real-world sensor data from climate monitoring stations, financial market indicators, and experimental physics setups.
-Improve model generalizability by training on real-world chaotic phenomena rather than purely mathematical constructs.
-Partner with research institutions to obtain high-quality experimental datasets for AI-driven chaos analysis.
 ---
 
 ## Conclusion  
