@@ -9,7 +9,7 @@ theta_dp=t_theta
 omega = 2 * np.pi  # Angular frequency (rad/s)
 A = 1.0  # Amplitude (m)
 
-# Generate Double Pendulum Data
+
 
 
 # Generate SHM Data
